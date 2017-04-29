@@ -1,0 +1,21 @@
+Write a PL/SQL block which will populate the RESULTS table as described below.
+Consider performance implications (specifically where would you commit the queries) as we are dealing with millions of records. This query is suppose to cater for large volumes of data. 
+
+The PL/SQL must:
+
+- insert into the RESULTS table each customer id, and the number of unique products purchased by that customer.
+- update the recently_purchased column of the customer table to 'Y' (yes if they have purchased a product in the last 12 months) or 'N' (if they have not purchased a product in the last 12 months).
+
+Listed below are the tables & definitions:
+
+table: CUSTOMER
+columns: customer_id NUMBER, customer_name VARCHAR2(100), recently_purchased VARCHAR2(1) -- 'Y' or 'N'
+
+table: CUST_PRODUCTS
+columns: product_id NUMBER, customer_id NUMBER, date_purchased DATE
+
+table: RESULTS
+columns: customer_id NUMBER, product_count NUMBER
+
+table: PRODUCTS
+column: product_id NUMBER, product_name VARCHAR2(100)
